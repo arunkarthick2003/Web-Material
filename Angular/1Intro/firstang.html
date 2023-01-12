@@ -1,0 +1,47 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<script src="../angular.min.js"></script>
+<body >
+
+
+<div  ng-app="">
+  <p>Name: <input type="text" ng-model="ab"></p>
+  <h1>{{ab}}</h1> 
+
+
+<!-- The ng-app directive defines an AngularJS application. -->
+
+<!-- The ng-model directive binds the value of HTML controls (input, select, textarea) to application data. -->
+
+<!-- The ng-bind directive binds application data to the HTML view.  -->
+
+<!-- The ng-app directive tells AngularJS that the <div> element is the "owner" of an AngularJS application.
+
+  The ng-model directive binds the value of the input field to the application variable name.
+  
+  The ng-bind directive binds the content of the <p> element to the application variable name.  -->
+
+    <p>{{1==1}}</p>  
+
+  <select ng-model="abc">
+    
+    <option value="books">Books</option>
+          <option value="Html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="php">PHP</option>
+          <option value="js">JavaScript</option>
+        </select>
+      
+        <p ng-bind="abc"></p>
+
+
+      </div>
+
+
+    </body>
+    </html>

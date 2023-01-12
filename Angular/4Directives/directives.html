@@ -1,0 +1,66 @@
+<!-- Directives
+-------------
+AngularJS lets you extend HTML with new attributes called Directives.
+
+AngularJS has a set of built-in directives which offers functionality to your applications.
+
+AngularJS also lets you define your own directives.
+
+
+AngularJS directives are extended HTML attributes with the prefix ng-. -->
+
+<!DOCTYPE html>
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+        <!-- <div ng-app="" ng-init="firstName='John'">
+
+                <p>Name: <input type="text" ng-model="firstName"></p>
+                <p>You wrote: {{ firstName }}</p>
+                
+        </div>  -->
+
+<!-- The ng-app directive initializes an AngularJS application.
+
+The ng-init directive initializes application data.
+
+The ng-model directive binds the value of HTML controls (input, select, textarea)to application data. -->
+
+
+<!-- Data Binding
+-------------
+The {{ firstName }} expression, in the example above, is an AngularJS data binding expression.
+
+The ng-repeat directive repeats an HTML element: -->
+
+
+
+
+<!-- <div ng-app="" ng-init="names=['asish','deepak','rajesh']">
+        <ol>
+          <li ng-repeat="x in names">
+            {{ x }}
+          </li>
+        </ol>
+</div> -->
+
+
+
+
+<div ng-app="" ng-init="names=[
+{name:'John',country:'India'},
+{name:'Alice',country:'Sweden'},
+{name:'Harry',country:'US'}]">
+
+<ul>
+  <li ng-repeat="x in names">
+    {{ x.name + ', ' + x.country }}
+  </li>
+</ul>
+
+</div> 
+
+</body>
+</html>

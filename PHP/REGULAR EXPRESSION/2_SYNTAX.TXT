@@ -1,0 +1,20 @@
+Syntax
+----------------
+In PHP, regular expressions are strings composed of delimiters, a pattern and optional modifiers.
+
+$exp = "/vit/i";
+
+
+In the example above,
+/ is the delimiter,
+vit is the pattern that is being searched for
+i is a modifier that makes the search case-insensitive.
+
+The delimiter can be any character that is not a letter, number, backslash or space. The most common delimiter is the forward slash (/), but when your pattern contains forward slashes it is convenient to choose other delimiters such as # or ~.
+
+
+Regular expression syntax includes the use of special characters.
+The characters that are given special meaning within a regular expression, are: . * ? + [ ] ( ) { } ^ $ | \. 
+You will need to backslash these characters whenever you want to use them literally.
+For example, if you want to match ".", you'd have to write \.. 
+All other characters automatically assume their literal meanings.

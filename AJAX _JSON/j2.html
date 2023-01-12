@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", "http://127.0.0.1/JSON/json_demo.txt", true);
+xmlhttp.send();
+
+
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+    // document.getElementById("demo").innerHTML = myObj.getElementsByTagName("pets");
+    console.log(myObj.age);
+    
+    
+  }
+
+
+};
+
+
+</script>
+
+<p>Take a look at <a href="json_demo.txt" target="_blank">json_demo.txt</a></p>
+
+</body>
+</html>

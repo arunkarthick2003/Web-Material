@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+
+   Username: <input type="text" id="un"> <br>
+   password: <input tyep="password" id="pw">
+
+    <input type= "submit" onclick="abcd()"> 
+
+</body>
+
+<script>
+
+     
+      function abcd()
+        {
+
+            var a = new XMLHttpRequest();
+            a.open("GET", "http://127.0.0.1/JSON/name.json", true);
+         
+            a.send();
+    
+    
+            a.onreadystatechange =function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let data = JSON.parse(this.responseText);
+              
+            let u = document.getElementById("un").value;
+            let p = document.getElementById("pw").value;
+            
+            if(u== data.login[0].uname && p== data.login[0].pass)
+            {
+                document.write("LOGIN SUCCESSFUL");
+              
+            }
+            else
+            {
+                document.write("LOGIN FAILED");
+            }
+        
+        
+      }
+        };
+    }
+    
+    </script>
+
+</html>

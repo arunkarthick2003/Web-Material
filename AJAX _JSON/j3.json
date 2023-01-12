@@ -1,0 +1,7 @@
+{
+    "login":[
+
+        {"uname":"abc","pwd":"MECH"},
+        {"uname":"xyz","pwd":"CSE"}
+    ]
+}

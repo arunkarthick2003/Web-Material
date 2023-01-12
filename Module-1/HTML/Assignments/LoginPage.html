@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is my site | ARUN</title>
+    </head>
+    <body bgcolor="Lightskyblue">
+        <h1 style="text-align:center;">Student registration form</h1>
+        <hr>
+        <form action="myPage.php" method="post">
+            <div>
+                Firstname:<br><input type="text" placeholder="Firstname" name="firname">
+            </div>
+            <br>
+            <div>
+                Middlename:<br><input type="text" placeholder="Middlename" name="midname">
+            </div>
+            <br>
+            <div>
+                Lastname:<br><input type="text" placeholder="Lastname" name="lastname">
+            </div>
+            <br>
+            <div>
+                Course:<select>
+                    <option value="" selected>Course</option>
+                    <option value="">Web technologies</option>
+                    <option value="">Artificial intelligence</option>
+                    <option value="">Machine learning</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                Gender:<br> <input type="radio" name="g">Male
+                <input type="radio" name="g">Female
+                <input type="radio" name="g">Other
+            </div>
+            <br>
+            <div>
+                Phone:<br><input type="text" name="country code" value="+91" size="2"/><br>
+                <input type="text" name="Phone" size="10"/>
+            </div>
+            <br>
+            <div>
+                Current address:<br><textarea columns="80" rows="5" placeholder="Current address" value="address" requireds></textarea>
+            </div>
+            <br>
+            <div>
+                Email:<br><input type="text" placeholder="Enter email id" name="email">
+            </div>
+            <br>
+            <div>
+                Password:<br><input type="password" placeholder="Enter password" name="psword" required> 
+            </div>
+            <br>
+            <div>
+                Re-type password:<br><input type="password" placeholder="Re enter password" name="repswd" required>
+            </div>
+            <br>
+            <input type="submit" value="Register" bgcolor="Green">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AJAX Login Checker</title>
+    </head>
+    <body>
+        Username: <input type="text" id="un">
+        Password: <input type="password" id="pass">
+        <input type="submit" onclick="abcd()">
+        <script>
+            function abcd(){
+                var a=XMLHttpRequest();
+                a.open('GET','http://127.0.0.1/name.json',true);
+                a.send();
+                a.onreadystatechange=function(){
+                    if(this.readystate==4 && this.status==200){
+                        let data=JSON.parse(this.responseText);
+                        let u=document.elementGetById('un');
+                        let p=document.elementGetById('pass');
+                        if(u== data.login[0].uname && p== data.login[0].pass){
+                            alert("LOGIN SUCCESSFUL");
+                        }
+                        else{
+                            alert('LOGIN FAILED');
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

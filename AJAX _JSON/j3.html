@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="demo"></h1>
+
+<script>
+
+var a = new XMLHttpRequest();
+
+a.open("GET", "http://127.0.0.1/JSON/j3.json", true);
+a.send();
+
+
+
+a.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+
+    let data = JSON.parse(this.responseText);
+
+
+    let v = document.getElementById('demo');
+    v.innerHTML = data.login[0].uname;
+  }
+};
+
+
+</script>
+
+
+
+</body>
+</html>

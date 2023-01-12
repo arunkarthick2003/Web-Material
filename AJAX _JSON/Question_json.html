@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JSON Sandbox</title>
+</head>
+
+<body>
+
+  <div class="q"></div>
+  <div class="list"></div>
+  <div class="q"></div>
+  <div class="list"></div>
+  <div class="q"></div>
+  <div class="list"></div>
+  <button onclick="load()">LOAD</button>
+  <button onclick="myfun()">Finsih</button>
+  <script>
+
+marks = 0;
+
+    var qu = document.getElementsByClassName('q');
+    var li = document.getElementsByClassName('list');
+
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "http://127.0.0.1/JSON/question.json", true);
+    xhttp.send(null);
+
+
+
+    function load() {
+      var response = JSON.parse(xhttp.responseText);
+      var qn1 = response.quiz.sport.q1.question;
+      var opt1 = response.quiz.sport.q1.options;
+      var ans1 = response.quiz.sport.q1.answer;
+      var qn2 = response.quiz.maths.q1.question;
+      var opt2 = response.quiz.maths.q1.options;
+      var ans2 = response.quiz.maths.q1.answer;
+      var qn3 = response.quiz.maths.q2.question;
+      var opt3 = response.quiz.maths.q2.options;
+      var ans3 = response.quiz.maths.q2.answer;
+      
+
+      var value1 = '';
+      var value2 = '';
+      var value3 = '';
+
+      for (let i = 0; i < 4; i++) {
+        value1 = value1 + "<input type='radio' name ='q1' value = " + opt1[i] + " >" + opt1[i] + " <br>";
+      }
+      for (let i = 0; i < 4; i++) {
+        value2 = value2 + "<input type='radio' name ='q2'value = " + opt2[i] + " >" + opt2[i] + " <br>";
+      }
+      for (let i = 0; i < 4; i++) {
+        value3 = value3 + "<input type='radio' name ='q3' value = " + opt3[i] + " >" + opt3[i] + " <br>";
+      }
+
+
+      qu[0].innerHTML = qn1;
+      qu[1].innerHTML = qn2;
+      qu[2].innerHTML = qn3;
+      li[0].innerHTML = value1;
+      li[1].innerHTML = value2;
+      li[2].innerHTML = value3;
+      
+    }
+
+   
+
+  ans = [0,'Huston',12,4];
+
+    function myfun() {
+      marks = 0;
+      for(let j = 1;j<4;j++)
+      {
+      var inp = document.querySelectorAll('input[type="radio"][name ="q'+j+'"]');
+      for (let i = 0; i < 4; i++) {
+        if (inp[i].checked) {
+                   if (inp[i].value == ans[j])
+            marks = marks + 2;
+        }
+      }
+    }
+
+    alert("You secured:"+marks)
+      }
+
+      
+
+
+    
+
+  </script>
+</body>
+
+</html>
+
+<!-- xhttp.open("GET", "https://support.oneskyapp.com/hc/en-us/article_attachments/202761727/example_2.json", true); -->
